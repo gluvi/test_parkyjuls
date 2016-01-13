@@ -247,12 +247,21 @@ footer {
     padding: 100px 0;
 }
 
-.logo-container {
+#logo-container {
+    margin: 0 auto;
     position:relative;
+    width: 200px;
+    height: 200px;
 }
 
-.img2 {
+#img1 {
     position: absolute;
-    left: 50px;
-    top: 50px;
+    left: 0;
+    top: 0;
+}
+
+#img2 {
+    position: absolute;
+    left: 0;
+    top: 0;
 }
