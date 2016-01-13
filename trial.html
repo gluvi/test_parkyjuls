@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0, minimum-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+<link rel="apple-touch-icon" sizes="57x57" href="./img/1.png">
+<link rel="apple-touch-icon" sizes="60x60" href="./img/1.png">
+<link rel="apple-touch-icon" sizes="72x72" href="./img/1.png">
+<link rel="apple-touch-icon" sizes="76x76" href="./img/1.png">
+<link rel="apple-touch-icon" sizes="114x114" href="./img/1.png">
+<link rel="apple-touch-icon" sizes="120x120" href="./img/1.png">
+<link rel="apple-touch-icon" sizes="144x144" href="./img/1.png">
+<link rel="apple-touch-icon" sizes="152x152" href="./img/1.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./img/1.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./img/1.png">
+<link rel="icon" type="image/png" sizes="32x32" href="./img/1.png">
+<link rel="icon" type="image/png" sizes="96x96" href="./img/1.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./img/1.png">
+
+
+    <title>gluvi5 - Think Less, Be Creative</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<script>
+var looper;
+var degrees = 0;
+function rotateAnimation(el,speed){
+    var elem = document.getElementById(el);
+    if(navigator.userAgent.match("Chrome")){
+        elem.style.WebkitTransform = "rotate("+degrees+"deg)";
+    } else if(navigator.userAgent.match("Firefox")){
+        elem.style.MozTransform = "rotate("+degrees+"deg)";
+    } else if(navigator.userAgent.match("MSIE")){
+        elem.style.msTransform = "rotate("+degrees+"deg)";
+    } else if(navigator.userAgent.match("Opera")){
+        elem.style.OTransform = "rotate("+degrees+"deg)";
+    } else {
+        elem.style.transform = "rotate("+degrees+"deg)";
+    }
+    looper = setTimeout('rotateAnimation(\''+el+'\','+speed+')',speed);
+    degrees++;
+    if(degrees > 359){
+        degrees = 1;
+    }
+    document.getElementById("status").innerHTML = "rotate("+degrees+"deg)";
+}
+</script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+    <!-- Header -->
+    <header id="top" class="header">
+        <div class="text-vertical-center">
+
+<div id="logo-container">
+  <img id="img1", src="./img/10.png" alt="cog1" style="position:absolute; z-index:1">
+<script>rotateAnimation("img1",25)</script>
+    <img id="img2", src="./img/11.png" style="position:absolute; z-index:2"/>
+</div>
+  
+
+<!---<div id="img1" style="display:none; position:absolute; top:0px; left:0px; z-index:2"> </div>-->
+<!--<div id="img2" style="display:block; position:absolute; top: 0px; left :0px; z-index:1"> </div>-->
+
+            <h1>gluvi5</h1>
+            <br>
+            <h2>Best 5 Videos From Your Favorite Topics</h2>
+            <br>
+            <a href="https://itunes.apple.com/app/id835599320" target="_blank">
+                <img class="store_link" src="img/appstore_download_logo.png" width='150px'; height='50px';></a>
+        </div>
+    </header>
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script>
+    // Closes the sidebar menu
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Opens the sidebar menu
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+
+    // Scrolls to the selected menu item on the page
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+
+</body>
+
+</html>
