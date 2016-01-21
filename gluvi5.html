@@ -43,6 +43,34 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+<script>
+var looper;
+var degrees = 0;
+function rotateAnimation(el,speed){
+    var elem = document.getElementById(el);
+    if(navigator.userAgent.match("Chrome")){
+        elem.style.WebkitTransform = "rotate("+degrees+"deg)";
+    } else if(navigator.userAgent.match("Firefox")){
+        elem.style.MozTransform = "rotate("+degrees+"deg)";
+    } else if(navigator.userAgent.match("MSIE")){
+        elem.style.msTransform = "rotate("+degrees+"deg)";
+    } else if(navigator.userAgent.match("Opera")){
+        elem.style.OTransform = "rotate("+degrees+"deg)";
+    } else {
+        elem.style.transform = "rotate("+degrees+"deg)";
+    }
+    looper = setTimeout('rotateAnimation(\''+el+'\','+speed+')',speed);
+    degrees++;
+    if(degrees > 359){
+        degrees = 1;
+    }
+    document.getElementById("status").innerHTML = "rotate("+degrees+"deg)";
+}
+</script>
+
+
+
+
 </head>
 
 <body>
@@ -53,15 +81,25 @@
     <header id="top" class="header">
         <div class="text-vertical-center">
 
- <p align="center"><img src="./img/1.png" width='200px'; height='200px';/></p>
+<div id="logo-container">
+  <img id="img1", src="./img/10.png" alt="cog1">
+<script>rotateAnimation("img1",25)</script>
+    <img id="img2", src="./img/11.png">
+</div>
+  
+
+<!---<div id="img1" style="display:none; position:absolute; top:0px; left:0px; z-index:2"> </div>-->
+<!--<div id="img2" style="display:block; position:absolute; top: 0px; left :0px; z-index:1"> </div>-->
 
             <h1>gluvi5</h1>
             <br>
             <h2>Best 5 Videos From Your Favorite Topics</h2>
             <br>
-            <a href="https://itunes.apple.com/app/id835599320" target="_blank">
-                <img class="store_link" src="img/appstore_download_logo.png" width='150px'; height='50px';></a>
-        </div>
+
+<!---            <a href="https://itunes.apple.com/app/id835599320" target="_blank">
+                <img class="store_link" src="img/appstore_download_logo.png" width='150px'; height='50px';></a>-->
+
+
     </header>
 
 
